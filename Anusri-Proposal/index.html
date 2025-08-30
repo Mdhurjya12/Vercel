@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Love Anusri</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffd6e1, #ffde61, #eec9a7);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+
+    .photos img {
+      width: 200px;
+      border-radius: 20px;
+      margin: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.1);
+    }
+
+    .message {
+      font-size: 1.5em;
+      margin: 30px auto;
+      max-width: 700px;
+      line-height: 1.6;
+      color: #222;
+      background: rgba(255,255,255,0.7);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #ff4d6d;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #ff1a4d;
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      color: #ff4d6d;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    💖 My Love, Anusri 💖
+  </header>
+
+  <div class="photos">
+    <img src="Anusri 1.jpg" alt="Anusri Photo 1">
+    <img src="Anusri 2.jpg" alt="Anusri Photo 2">
+  </div>
+
+  <div class="message">
+    From the moment you entered my life, everything became brighter and more beautiful.  
+    This page is just a small way of showing how much I cherish you.  
+    You are my smile, my peace, my forever. 💕
+  </div>
+
+  <button onclick="alert('Anusri, will you be mine forever? 💍❤️')">Click Me</button>
+
+  <footer>
+    Forever Yours, Madhurjya
+  </footer>
+
+  <!-- Background romantic music -->
+  <audio id="bg-music" loop>
+    <source src="Lana_Del_Rey_-_Cinnamon_Girl_0ffb0gmedia.com.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Start music after first click
+    document.body.addEventListener("click", function() {
+      const music = document.getElementById("bg-music");
+      music.play().catch(e => console.log("Autoplay blocked:", e));
+    }, { once: true });
+
+    // Create floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (20 + Math.random() * 30) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 700);
+  </script>
+</body>
+</html>
